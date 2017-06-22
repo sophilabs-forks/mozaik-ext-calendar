@@ -79,8 +79,8 @@ class Almanac {
               title: opts.calendar.title || response.summary
             },
             location: event.location,
-            start: moment(event.start.dateTime).valueOf(),
-            end: moment(event.end.dateTime).valueOf()
+            start: moment(event.start.date || event.start.dateTime).valueOf(),
+            end: moment(event.end.date || event.end.dateTime).valueOf()
           };
         });
 
